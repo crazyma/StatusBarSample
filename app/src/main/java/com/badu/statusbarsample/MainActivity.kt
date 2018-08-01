@@ -15,5 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.container, MainFragment())
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }
